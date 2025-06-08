@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gringo Barbearia - Cortes Masculinos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Menu de Navegação -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><span>GRINGO</span> BARBEARIA</h2>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#portfolio" class="nav-link">Portfólio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#fila" class="nav-link">Fila</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#avaliacoes" class="nav-link">Avaliações</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#localizacao" class="nav-link">Localização</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contador Flutuante -->
+    <div class="floating-counter" id="floating-counter">
+        <div class="counter-content">
+            <div class="live-indicator">
+                <span class="live-dot"></span>
+                AO VIVO
+            </div>
+            <div class="counter-number" id="contador">?</div>
+            <span class="counter-label">na fila</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">GRINGO <span class="highlight">BARBEARIA</span></h1>
+                    <p class="hero-subtitle">Tradição e estilo em cada corte</p>
+                    <p class="hero-description">Experimente o melhor da barbearia tradicional com técnicas modernas e atendimento personalizado. Temos cerveja, água, suco, refrigerante e geladinho gourmet!</p>
+                    <div class="hero-buttons">
+                        <a href="#fila" class="btn btn-primary">Ver Fila</a>
+                        <a href="#portfolio" class="btn btn-secondary">Nosso Trabalho</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-real">
+                        <img src="img/gringobarbearia.png" alt="Gringo Barbearia - Interior da barbearia" class="hero-barbershop-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Fila -->
+    <section id="fila" class="queue-section">
+        <div class="container">
+            <h2 class="section-title">Fila de Atendimento</h2>
+            <p class="section-subtitle">Acompanhe em tempo real quantas pessoas estão na fila</p>
+            
+            <div class="queue-display">
+                <div class="queue-counter">
+                    <div class="counter-main">
+                        <span class="counter-number-large" id="contador">?</span>
+                        <span class="counter-text">pessoas na fila</span>
+                    </div>
+                    <div class="live-status">
+                        <span class="live-dot-large"></span>
+                        <span>Atualização em tempo real</span>
+                    </div>
+                </div>
+                
+                <div class="queue-visual">
+                    <div class="queue-people" id="queue-people">
+                        <!-- Pessoas serão adicionadas dinamicamente -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="queue-info">
+                <div class="info-card">
+                    <i class="fas fa-clock"></i>
+                    <h4>Tempo Médio</h4>
+                    <p>20-30 min por pessoa</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-calendar"></i>
+                    <h4>Horário</h4>
+                    <p>Seg - Sáb: 8h às 19h</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-users"></i>
+                    <h4>Capacidade</h4>
+                    <p>Até 15 pessoas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfólio -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Nosso Portfólio</h2>
+            <p class="section-subtitle">Conheça alguns dos nossos melhores trabalhos</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="image-placeholder" style="background-image: url('img/corte1.png'); ">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h4>Corte Clássico</h4>
+                        <p>Estilo tradicional refinado</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="image-placeholder" style="background-image: url('img/corte2.png');">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h4>Fade Moderno</h4>
+                        <p>Degradê perfeito</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="image-placeholder" style="background-image: url('img/corte3.png');">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h4>Barba Estilizada</h4>
+                        <p>Acabamento profissional</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="image-placeholder" style="background-image: url('img/corte4.png');">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h4>Combo Completo</h4>
+                        <p>Corte e barba harmonizados</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="image-placeholder" style="background-image: url('img/corte5.png');">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h4>Estilo Executivo</h4>
+                        <p>Elegância profissional</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="image-placeholder" style="background-image: url('img/corte6.png');">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h4>Corte Artístico</h4>
+                        <p>Criatividade e técnica</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avaliações -->
+    <section id="avaliacoes" class="reviews">
+        <div class="container">
+            <h2 class="section-title">O que nossos clientes dizem</h2>
+            <p class="section-subtitle">Depoimentos de quem confia no nosso trabalho</p>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Ótimo. Corto cabelo quase 4 anos na barbearia! Sempre bem atendido, ótimo profissional."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Alan Cabral</h4>
+                            <span>Cliente há 4 anos</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Excelente trabalho e atendimento!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>José Tudisco</h4>
+                            <span>Local Guide</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Top demais!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Osmar Silverio</h4>
+                            <span>Cliente satisfeito</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Localização -->
+    <section id="localizacao" class="location">
+        <div class="container">
+            <h2 class="section-title">Nossa Localização</h2>
+            <p class="section-subtitle">Venha nos visitar e conheça nosso espaço</p>
+            
+            <div class="location-content">
+                <div class="location-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>Rua Júlio Brandão, 482<br>Centro - Jacutinga/MG</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horário de Funcionamento</h4>
+                            <p>Segunda a Sexta: 8h às 19h<br>Sábado: 8h às 17h<br>Domingo: Fechado</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Contato</h4>
+                            <p>(19) 99622-0966<br>gringobarbearia@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="location-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d922.9396638113291!2d-46.61335000865258!3d-22.2871303035633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c909b28e2c0753%3A0x6454cc33a158ba30!2sGringo%20barbearia!5e0!3m2!1spt-BR!2sbr!4v1749309609122!5m2!1spt-BR!2sbr"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; border-radius: 10px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GRINGO <span>BARBEARIA</span></h3>
+                    <p>Tradição e qualidade em cada corte. Cuidando da sua imagem com profissionalismo e dedicação. Venha relaxar com cerveja, água, suco, refrigerante e geladinho gourmet!</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="#">Corte Masculino</a></li>
+                        <li><a href="#">Barba</a></li>
+                        <li><a href="#">Bigode</a></li>
+                        <li><a href="#">Sobrancelha</a></li>
+                        <li><a href="#">Tratamentos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Rua Júlio Brandão, 482</li>
+                        <li><i class="fas fa-phone"></i> (19) 99622-0966</li>
+                        <li><i class="fas fa-envelope"></i> gringobarbearia@gmail.com</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Horários</h4>
+                    <ul>
+                        <li>Segunda - Sexta: 8h às 19h</li>
+                        <li>Sábado: 8h às 17h</li>
+                        <li>Domingo: Fechado</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gringo Barbearia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão WhatsApp Flutuante -->
+    <a href="https://wa.me/5519996220966" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Contato</span>
+    </a>
+
+    <script type="module"  src="script.js"></script>
+</body>

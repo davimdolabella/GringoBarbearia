@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel da Fila</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="painel.css">
+</head>
+<body>
+    <div class="painel-container">
+        <div class="painel-header">
+            <h1 class="painel-title">Controle da <span style="color: var(--primary-color);">Fila</span></h1>
+            <p class="painel-subtitle">Gerenciador de Atendimento</p>
+        </div>
+
+        <div class="contador-display">
+            <div class="contador-numero" id="contadora">?</div>
+            <div class="contador-label">Pessoas na Fila</div>
+            <div class="live-indicator">
+                <div class="live-dot"></div>
+                <span>LIVE</span>
+            </div>
+        </div>
+
+        <div class="controles">
+            <button class="btn-controle btn-menos" id="menos" title="Remover pessoa da fila">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button class="btn-controle btn-mais" id="mais" title="Adicionar pessoa à fila">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+
+        <div class="status-info">
+            <p><i class="fas fa-info-circle"></i> Use os botões para gerenciar a quantidade de pessoas na fila em tempo real</p>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
